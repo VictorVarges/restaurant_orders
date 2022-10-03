@@ -1,3 +1,8 @@
+from src.analyze_log import (
+    never_ordered_by_person
+)
+
+
 from collections import Counter
 
 class TrackOrders:
@@ -20,7 +25,7 @@ class TrackOrders:
         return max(order, key=order.get)
 
     def get_never_ordered_per_customer(self, customer):
-        pass
+        return never_ordered_by_person(self.orders, customer)
 
     def get_days_never_visited_per_customer(self, customer):
         pass
