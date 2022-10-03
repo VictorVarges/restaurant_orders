@@ -1,5 +1,6 @@
 from src.analyze_log import (
-    never_ordered_by_person
+    never_ordered_by_person,
+    days_never_visited
 )
 
 
@@ -28,7 +29,7 @@ class TrackOrders:
         return never_ordered_by_person(self.orders, customer)
 
     def get_days_never_visited_per_customer(self, customer):
-        pass
+        return days_never_visited(self.orders, customer)
 
     def get_busiest_day(self):
         pass
