@@ -4,9 +4,6 @@ from src.analyze_log import (
 )
 
 
-from collections import Counter
-
-
 class TrackOrders:
     def __init__(self):
         self.orders = []
