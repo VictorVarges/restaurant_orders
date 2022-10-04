@@ -28,7 +28,11 @@ class InventoryControl:
         }
 
     def add_new_order(self, customer, order, day):
-        pass
+        for ingredient in self.INGREDIENTS[order]:
+            if not self.costs[ingredient]:
+                return False
+            self.costs[ingredient] -= 1
+        self.inventory.append([customer, order, day])
 
     def get_quantities_to_buy(self):
         list_quantity = dict()
