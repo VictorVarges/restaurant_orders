@@ -45,3 +45,10 @@ class InventoryControl:
                 list_products_to_buy[item] += 1
 
         return list_products_to_buy
+
+    def get_available_dishes(self):
+        result_dishes = set()
+        for dish in self.INGREDIENTS:
+            if self.costs[self.INGREDIENTS[dish][0]] > 1:
+                result_dishes.add(dish)
+        return result_dishes
